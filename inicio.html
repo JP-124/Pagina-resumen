@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resúmenes de Libros</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos anteriores ... */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #a73737;
+            color: #fff;
+            text-align: left;
+            padding: 1em 1em;
+            display: flex;
+            justify-content: space-between;
+            position: relative; /* Posición relativa para el menú */
+        }
+
+        h1 {
+            margin: 0;
+            color: #ff0000;
+        }
+
+        #search-bar {
+            text-align: right;
+            margin-right: 20px;
+        }
+
+        #search-input {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        #search-button {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        #navigation-bar {
+            background-color: #888;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #navigation-bar a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+            margin: 0 15px;
+        }
+
+        #main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+
+        #book-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        #recommended-books {
+            margin-top: 30px;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+
+        #recommended-books h2 {
+            text-align: center;
+            font-size: 24px;
+        }
+
+        #recommended-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        #recommended-list li {
+            margin: 10px;
+            text-align: center;
+        }
+
+        #recommended-list img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+
+        #recommended-list a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            header {
+                padding-top: 15px;
+            }
+
+            h1 {
+                text-align: center;
+            }
+        }
+
+        /* Estilos adicionales de la guía */
+        #not-found-message {
+            color: #ff0000;
+            margin-top: 10px;
+        }
+
+        #main-content p {
+            line-height: 1.6;
+            font-size: 18px;
+            color: #333;
+        }
+
+        #search-button {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        /* Otros estilos ... */
+    </style>
+    <link rel="shortcut icon" href="logoresume.png">
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <h1>Resumidos<span style="color: white;">.com</span></h1>
+        <!-- Barra de búsqueda -->
+        <div id="search-bar">
+            <input type="text" id="search-input" placeholder="Buscar..." onkeypress="handleSearchKeyPress(event)">
+            <button id="search-button" onclick="searchAndRedirect()">Buscar</button>
+        </div>
+    </header>
+
+    <!-- Barra de navegación -->
+    <div id="navigation-bar">
+        <a href="inicio.html">Inicio</a>
+        <a href="listadelibros.html">Lista de libros</a>
+        <a href="categorias.html">Categorías</a>
+        <a href="libroporautor.html">Lista de autores</a>
+        <a href="guiabuscador.html">Guía del buscador</a></li>
+    </div>
+
+    <!-- Contenido principal -->
+    <section id="main-content">
+        <p>Bienvenido a de Resumidos.com. Aquí encontrarás resúmenes de cualquier libro, explora nuestra amplia variedad de resúmenes.</p>
+        <p>Los libros completos estarán listos cuando mi otra página web también esté lista</p>
+        <!-- Lista de libros -->
+        <ul id="book-list">
+            <!-- Aquí se agregarán dinámicamente los libros -->
+        </ul>
+
+        <!-- Sección de libros más recomendados -->
+        <div id="recommended-books">
+            <h2>Libros Más Recomendados</h2>
+            <ul id="recommended-list">
+                <!-- Libro 1 -->
+                <li>
+                    <a href="lisa,dematthewlipman.html">
+                        <p>Lisa, de Matthew Lipman</p>
+                    </a>
+                </li>
+
+                <!-- Libro 2 -->
+                <li>
+                    <a href="suki,dematthewlipman.html">
+                        <p>Suki, de Matthew Lipman</p>
+                    </a>
+                </li>
+
+                <!-- Libro 3 -->
+                <li>
+                    <a href="los3cerditos.html">
+                        <p>Los 3 cerditos de Joseph Jacobs</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="brevehistoriadeltiempo.html">
+                        <p>Breve historia del tiempo de Stephen Hawking</p>
+                    </a>
+                </li>
+
+                <!-- Más libros recomendados se pueden agregar aquí -->
+            </ul>
+        </div>
+    </section>
+
+    <!-- Mensaje de no encontrado -->
+    <div id="not-found-message"></div>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2023 Renta de Resúmenes de Libros.</p>
+        <p>¿Tienes dudas, sugerencias o comentarios?</p>
+        <p>Escríbeme a resumidos.com123@gmail.com</p>
+    </footer>
+
+    <!-- Script para buscar y redirigir ... -->
+    <script>
+        // Función para buscar y redirigir a la página correspondiente
+        function searchAndRedirect() {
+            var searchInput = document.getElementById('search-input');
+            var searchTerm = searchInput.value.trim().toLowerCase();
+
+            // Reemplazar espacios con guiones bajos para construir los nombres de archivo
+            var formattedSearchTerm = searchTerm.replace(/\s+/g, '') + '.html';
+
+            // Redirigir a la página correspondiente si existe
+            var notFoundMessage = document.getElementById('not-found-message');
+            notFoundMessage.innerHTML = ''; // Limpiar el mensaje
+
+            if (bookExists(formattedSearchTerm)) {
+                window.location.href = formattedSearchTerm;
+            } else {
+                notFoundMessage.innerHTML = 'No hay resúmenes de libros de acuerdo a tu solicitud.';
+            }
+        }
+
+        // Función para manejar el evento de presionar Enter en la barra de búsqueda
+        function handleSearchKeyPress(event) {
+            if (event.key === 'Enter') {
+                searchAndRedirect();
+            }
+        }
+
+        // Función para verificar si existe un libro
+        function bookExists(bookName) {
+            // Puedes implementar la lógica para verificar si existe el libro
+            // Devuelve true si el libro existe, false de lo contrario
+            return true; // Placeholder, reemplazar con lógica real
+        }
+    </script>
+
+</body>
+</html>
+
+   
