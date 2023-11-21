@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen del Libro</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+   body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #a73737;
+            color: #fff;
+            text-align: left;
+            padding: 1em 1em;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        h1 {
+            margin: 0;
+            color: #ffffff;
+        }
+
+     
+        nav {
+            background-color: #888;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* Centra los elementos horizontalmente */
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff; /* Color blanco para los enlaces */
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        #main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #book-details {
+            margin-bottom: 20px;
+            display: flex; /* Nuevo estilo para usar flexbox */
+            align-items: center; /* Centrar verticalmente */
+        }
+
+        #book-image {
+            max-width: 100%;
+            height: auto;
+            margin-right: 20px; /* Espacio entre la imagen y el texto */
+        }
+
+        #back-to-list {
+            margin-top: 20px;
+        }
+
+        #search-bar {
+            text-align: right;
+            margin-right: 20px;
+        }
+
+        #search-input {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        #search-button {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: 20px;
+        }
+
+        #comments {
+            margin-top: 20px;
+        }
+
+        .comment {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .comment span {
+            margin-right: 5px;
+        }
+
+        .comment strong {
+            font-weight: bold;
+        }
+
+        .delete-button {
+            background-color: #ff5c5c;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+    <link rel="shortcut icon" href="logoresume.png">
+</head>
+
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <h1>Resumen del libro</h1>
+        <!-- Barra de búsqueda -->
+        <div id="search-bar">
+            <input type="text" id="search-input" placeholder="Buscar..." onkeypress="handleSearchKeyPress(event)">
+            <button id="search-button" onclick="searchAndRedirect()">Buscar</button>
+        </div>
+    </header>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <ul>
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="listadelibros.html">Lista de libros</a></li>
+            <li><a href="categorias.html">Categorías</a></li>
+            <li><a href="libroporautor.html">Lista de autores</a></li>
+            <li><a href="guiabuscador.html">Guía del buscador</a></li>
+        </ul>
+    </nav>
+
+    <section id="main-content">
+        <!-- Enlace para volver a la lista de libros -->
+        <p id="back-to-list"><a href="listadelibros.html">Volver a la lista de libros</a></p>
+        <p id="back-to-list"><a href="libroporautor.html">Volver a la lista de autores</a></p>
+        <p id="back-to-list"><a href="categorias.html">Volver a categorías</a></p>
+        <!-- Detalles del libro -->
+        <div id="book-details">
+            <div>
+                <h2>Crónica de una muerte anunciada</h2>
+<p>"Crónica de una muerte anunciada" es una novela del autor colombiano Gabriel García Márquez, publicada por primera vez en 1981. La historia está basada en un hecho real ocurrido en la juventud del autor y se centra en la narración de un asesinato que, como sugiere el título, está anunciado desde el principio. A lo largo de la obra, García Márquez utiliza una estructura no lineal y múltiples voces narrativas para explorar temas como el honor, la moralidad, la tradición y el destino.</p>
+<p>La historia se desarrolla en un pequeño pueblo caribeño no identificado y comienza con la mañana en que Santiago Nasar es asesinado. El narrador, que es un amigo del protagonista, intenta reconstruir los eventos que llevaron a la trágica muerte de Nasar. El lector pronto descubre que la hermana de Ángela Vicario, una joven recién casada, ha sido devuelta a su familia la noche de bodas por no ser virgen. En un intento de restaurar el honor familiar, los hermanos Vicario, Pablo y Pedro, deciden vengar el ultraje matando a Santiago Nasar, a quien identifican erróneamente como el responsable de la deshonra de Ángela.</p>
+<p>La estructura de la novela se destaca por su naturaleza no lineal, ya que la trama se presenta en retrospectiva y a través de la perspectiva de múltiples personajes. Los eventos que llevaron a la muerte de Nasar se revelan gradualmente a medida que los diferentes testigos proporcionan sus recuerdos y perspectivas sobre lo ocurrido. Este enfoque narrativo crea una sensación de inevitabilidad y destaca la tragedia inminente.</p>
+<p>La historia examina el tema del honor y la importancia que la sociedad atribuye a la reputación y la moralidad. La cultura del pueblo está arraigada en tradiciones conservadoras que imponen expectativas rigurosas sobre el comportamiento social, especialmente en lo que respecta a la virginidad de las mujeres. El matrimonio de Ángela Vicario y Bayardo San Román, y la posterior devolución de Ángela a su familia, desencadenan una serie de eventos que llevan al trágico desenlace.</p>
+<p>La novela también explora el concepto de destino. Aunque la muerte de Nasar está anunciada desde el principio, los personajes parecen incapaces de evitar el curso de los eventos. La predestinación y la impotencia ante el destino son elementos que añaden una capa de fatalismo a la narrativa. La falta de acción para prevenir el asesinato, a pesar de que la comunidad está al tanto de los planes de los hermanos Vicario, refleja la inevitabilidad de ciertos acontecimientos en la vida.</p>
+<p>La figura de Santiago Nasar es compleja. Aunque no es el causante del ultraje a Ángela, se convierte en el chivo expiatorio de la venganza de los hermanos Vicario. Nasar, en muchos aspectos, es un personaje que representa la ironía de la situación. A pesar de su inminente muerte, continúa su vida cotidiana ajeno al peligro que se cierne sobre él.</p>
+<p>El aspecto periodístico de la novela, reflejado en el título, se manifiesta a través de la investigación del narrador para reconstruir los eventos que llevaron al asesinato. La narrativa juega con la idea de la verdad y la subjetividad de la memoria, ya que cada testigo aporta su versión de los acontecimientos. Este enfoque contribuye a la atmósfera de misterio y permite a García Márquez explorar la naturaleza de la verdad y la percepción.</p>
+<p>Los personajes secundarios, como los hermanos Vicario, Bayardo San Román, Ángela Vicario y otros residentes del pueblo, desempeñan papeles clave en la narrativa. Cada uno aporta su perspectiva única y su interpretación de los acontecimientos, revelando capas adicionales de la trama. La comunidad pequeña y cerrada es testigo de la tragedia, pero su incapacidad para evitarla refleja las limitaciones de la intervención humana en el destino.</p>
+<p>La novela también aborda la naturaleza dual de la memoria y cómo la percepción individual de los eventos puede variar significativamente. Los detalles difieren en las declaraciones de los testigos, lo que destaca la subjetividad y la maleabilidad de la memoria. Este aspecto juega un papel importante en la construcción de la verdad y la realidad dentro de la obra.</p>
+<p>El clímax de la novela llega con la descripción detallada del asesinato de Nasar. A pesar de la revelación anticipada de su muerte, la narrativa crea una tensión palpable a medida que se acerca el momento fatal. La violencia y la inevitabilidad de la tragedia se manifiestan de manera impactante, dejando una impresión duradera en el lector.</p>
+<p>La conclusión de "Crónica de una muerte anunciada" revela las secuelas del asesinato y cómo la vida en el pueblo continúa, a pesar de la tragedia. La novela cierra el círculo al regresar al momento de la muerte de Santiago Nasar, pero ahora con una comprensión más completa de los eventos que llevaron a ese punto.</p>
+<p>En resumen, "Crónica de una muerte anunciada" de Gabriel García Márquez es una obra maestra que examina temas como el honor, la moralidad, la tradición y el destino en el contexto de un pequeño pueblo caribeño. La estructura no lineal, la multiplicidad de voces narrativas y el enfoque periodístico aportan complejidad a la obra, mientras que la inevitabilidad de la muerte de Santiago Nasar añade una capa de fatalismo a la narrativa. La novela, a través de su exploración de la verdad y la memoria, continúa siendo una reflexión impactante sobre la naturaleza humana y la sociedad.</p>
+            </div>
+        </div>
+        <a href="">Libro completo en mi otra página web (Click aquí)</a></li>
+        <!-- Espacio para comentarios ... -->
+        <div id="comments">
+            <h3>Comentarios sobre el libro</h3>
+            <div>
+                <label for="author-input">Tu nombre:</label>
+                <input type="text" id="author-input" placeholder="Tu nombre...">
+                <span id="author-error" style="color: red;"></span>
+            </div>
+            <textarea id="comment-input" rows="4" placeholder="Agrega tu comentario aquí..." onkeypress="handleCommentKeyPress(event)"></textarea>
+            <span id="comment-error" style="color: red;"></span>
+            <button id="comment-button" onclick="publishComment()">Publicar</button>
+            <!-- Puedes agregar un botón de enviar comentario si lo deseas -->
+            <div id="published-comments"></div>
+        </div>
+
+        <!-- Mensaje si no se encuentra el libro -->
+        <div id="not-found-message"></div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2023 Renta de Resúmenes de Libros.</p>
+        <p>¿Tienes dudas, sugerencias o comentarios?</p>
+        <p>Escríbeme a resumidos.com123@gmail.com</p>
+    </footer>
+
+    <!-- Script para almacenar y mostrar comentarios ... -->
+    <script>
+        // Función para publicar un comentario
+        function publishComment() {
+            var authorInput = document.getElementById('author-input');
+            var commentInput = document.getElementById('comment-input');
+            var authorName = authorInput.value.trim();
+            var commentText = commentInput.value.trim();
+            var authorError = document.getElementById('author-error');
+            var commentError = document.getElementById('comment-error');
+
+            // Validar que se haya ingresado el nombre del autor y el comentario
+            if (!authorName && !commentText) {
+                authorError.textContent = 'No ingresaste nada';
+                commentError.textContent = 'No ingresaste nada';
+                return;
+            } else if (!authorName) {
+                authorError.textContent = 'No ingresaste el usuario';
+                return;
+            } else if (!commentText) {
+                commentError.textContent = 'No ingresaste el comentario';
+                return;
+            }
+
+            // Limpiar mensajes de error
+            authorError.textContent = '';
+            commentError.textContent = '';
+
+            // Obtener la sección de comentarios
+            var publishedComments = document.getElementById('published-comments');
+
+            // Crear un nuevo elemento para el comentario
+            var commentElement = document.createElement('div');
+            commentElement.className = 'comment';
+            var commentContent = document.createElement('span');
+            commentContent.innerHTML = '<strong>' + authorName + ':</strong> ' + commentText;
+            commentElement.appendChild(commentContent);
+
+            // Agregar el botón de eliminar al comentario
+            var deleteButton = document.createElement('button');
+            deleteButton.className = 'delete-button';
+            deleteButton.textContent = 'Eliminar';
+            deleteButton.onclick = function () {
+                publishedComments.removeChild(commentElement);
+                // Actualizar los comentarios almacenados después de eliminar uno
+                updateStoredComments();
+            };
+            commentElement.appendChild(deleteButton);
+
+            // Agregar el comentario a la sección de comentarios
+            publishedComments.appendChild(commentElement);
+
+            // Almacenar el comentario en localStorage
+            saveComment({ author: authorName, text: commentText });
+
+            // Limpiar los cuadros de entrada después de publicar el comentario
+            authorInput.value = '';
+            commentInput.value = '';
+        }
+
+        // Función para cargar los comentarios almacenados al cargar la página
+        function loadComments() {
+            var storedComments = getStoredComments();
+
+            if (storedComments) {
+                var publishedComments = document.getElementById('published-comments');
+
+                storedComments.forEach(function (comment) {
+                    var commentElement = createCommentElement(comment);
+                    publishedComments.appendChild(commentElement);
+                });
+            }
+        }
+
+        // Función para almacenar un comentario en localStorage
+        function saveComment(comment) {
+            var storedComments = getStoredComments() || [];
+            storedComments.push(comment);
+            localStorage.setItem('comments', JSON.stringify(storedComments));
+        }
+
+        // Función para obtener los comentarios almacenados en localStorage
+        function getStoredComments() {
+            var storedCommentsJSON = localStorage.getItem('comments');
+            return storedCommentsJSON ? JSON.parse(storedCommentsJSON) : null;
+        }
+
+        // Función para crear un elemento de comentario
+        function createCommentElement(comment) {
+            var commentElement = document.createElement('div');
+            commentElement.className = 'comment';
+            var commentContent = document.createElement('span');
+            commentContent.innerHTML = '<strong>' + comment.author + ':</strong> ' + comment.text;
+            commentElement.appendChild(commentContent);
+
+            // Agregar el botón de eliminar al comentario
+            var deleteButton = document.createElement('button');
+            deleteButton.className = 'delete-button';
+            deleteButton.textContent = 'Eliminar';
+            deleteButton.onclick = function () {
+                commentElement.parentNode.removeChild(commentElement);
+                // Actualizar los comentarios almacenados después de eliminar uno
+                updateStoredComments();
+            };
+            commentElement.appendChild(deleteButton);
+
+            return commentElement;
+        }
+
+        // Función para actualizar los comentarios almacenados después de eliminar uno
+        function updateStoredComments() {
+            var commentElements = document.getElementsByClassName('comment');
+            var updatedComments = [];
+
+            for (var i = 0; i < commentElements.length; i++) {
+                var commentContent = commentElements[i].getElementsByTagName('span')[0].innerHTML;
+                var splitIndex = commentContent.indexOf(':') + 2; // Considerando espacio después de ':'
+                var author = commentContent.substring(0, splitIndex - 2);
+                var text = commentContent.substring(splitIndex);
+                updatedComments.push({ author: author, text: text });
+            }
+
+            localStorage.setItem('comments', JSON.stringify(updatedComments));
+        }
+
+        // Función para manejar el evento de presionar Enter en el área de comentarios
+        function handleCommentKeyPress(event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                publishComment();
+            }
+        }
+
+        // Función para buscar y redirigir a la página correspondiente
+        function searchAndRedirect() {
+            var searchInput = document.getElementById('search-input');
+            var searchTerm = searchInput.value.trim().toLowerCase();
+
+            // Reemplazar espacios con guiones bajos para construir los nombres de archivo
+            var formattedSearchTerm = searchTerm.replace(/\s+/g, '') + '.html';
+
+            // Redirigir a la página correspondiente si existe
+            var notFoundMessage = document.getElementById('not-found-message');
+            notFoundMessage.innerHTML = ''; // Limpiar el mensaje
+
+            if (bookExists(formattedSearchTerm)) {
+                window.location.href = formattedSearchTerm;
+            } else {
+                notFoundMessage.innerHTML = 'No hay resúmenes de libros de acuerdo a tu solicitud.';
+            }
+        }
+
+        // Función para manejar el evento de presionar Enter en la barra de búsqueda
+        function handleSearchKeyPress(event) {
+            if (event.key === 'Enter') {
+                searchAndRedirect();
+            }
+        }
+
+        // Función para verificar si existe un libro
+        function bookExists(bookName) {
+            // Puedes implementar la lógica para verificar si existe el libro
+            // Devuelve true si el libro existe, false de lo contrario
+            return true; // Placeholder, reemplazar con lógica real
+        }
+
+        // Configurar el evento de presionar Enter en el área de comentarios
+        var commentInput = document.getElementById('comment-input');
+        commentInput.addEventListener('keypress', handleCommentKeyPress);
+
+        // Configurar el evento de presionar Enter en la barra de búsqueda
+        var searchInput = document.getElementById('search-input');
+        searchInput.addEventListener('keypress', handleSearchKeyPress);
+
+        // Cargar comentarios al cargar la página
+        window.onload = loadComments;
+    </script>
+
+</body>
+
+</html>

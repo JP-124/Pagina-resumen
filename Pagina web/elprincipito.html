@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen del Libro</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+   body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #a73737;
+            color: #fff;
+            text-align: left;
+            padding: 1em 1em;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        h1 {
+            margin: 0;
+            color: #ffffff;
+        }
+
+     
+        nav {
+            background-color: #888;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* Centra los elementos horizontalmente */
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff; /* Color blanco para los enlaces */
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        #main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #book-details {
+            margin-bottom: 20px;
+            display: flex; /* Nuevo estilo para usar flexbox */
+            align-items: center; /* Centrar verticalmente */
+        }
+
+        #book-image {
+            max-width: 100%;
+            height: auto;
+            margin-right: 20px; /* Espacio entre la imagen y el texto */
+        }
+
+        #back-to-list {
+            margin-top: 20px;
+        }
+
+        #search-bar {
+            text-align: right;
+            margin-right: 20px;
+        }
+
+        #search-input {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        #search-button {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: 20px;
+        }
+
+        #comments {
+            margin-top: 20px;
+        }
+
+        .comment {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .comment span {
+            margin-right: 5px;
+        }
+
+        .comment strong {
+            font-weight: bold;
+        }
+
+        .delete-button {
+            background-color: #ff5c5c;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+    <link rel="shortcut icon" href="logoresume.png">
+</head>
+
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <h1>Resumen del libro</h1>
+        <!-- Barra de búsqueda -->
+        <div id="search-bar">
+            <input type="text" id="search-input" placeholder="Buscar..." onkeypress="handleSearchKeyPress(event)">
+            <button id="search-button" onclick="searchAndRedirect()">Buscar</button>
+        </div>
+    </header>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <ul>
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="listadelibros.html">Lista de libros</a></li>
+            <li><a href="categorias.html">Categorías</a></li>
+            <li><a href="libroporautor.html">Lista de autores</a></li>
+            <li><a href="guiabuscador.html">Guía del buscador</a></li>
+        </ul>
+    </nav>
+
+    <section id="main-content">
+        <!-- Enlace para volver a la lista de libros -->
+        <p id="back-to-list"><a href="listadelibros.html">Volver a la lista de libros</a></p>
+        <p id="back-to-list"><a href="libroporautor.html">Volver a la lista de autores</a></p>
+        <p id="back-to-list"><a href="categorias.html">Volver a categorías</a></p>
+        <!-- Detalles del libro -->
+        <div id="book-details">
+            <div>
+                <h2>El principito</h2>
+<p>"El Principito" es una obra maestra de la literatura escrita por Antoine de Saint-Exupéry y publicada por primera vez en 1943. Aunque originalmente fue escrita en francés, la novela se ha traducido a numerosos idiomas y ha cautivado a lectores de todas las edades en todo el mundo. La historia se presenta como un cuento infantil, pero en su corazón, aborda temas profundos y universales que invitan a la reflexión sobre la vida, el amor, la amistad y la naturaleza humana.</p>
+<p>La trama sigue las aventuras del Principito, un pequeño príncipe que habita en un pequeño asteroide llamado B-612. El Principito emprende un viaje por varios planetas, cada uno habitado por personajes peculiares que reflejan diferentes aspectos de la sociedad y la naturaleza humana. A través de estas experiencias, el Principito aprende lecciones valiosas sobre la vida y las relaciones.</p>
+<p>En su viaje, el Principito visita planetas habitados por un rey egocéntrico, un vanidoso, un bebedor, un farolero y otros personajes que representan diversos vicios y debilidades humanas. Cada encuentro proporciona al Principito y a los lectores una visión única de la complejidad del mundo y de las relaciones humanas.</p>
+<p>Uno de los encuentros más significativos del Principito es con el Zorro, quien le enseña la importancia de las relaciones y la responsabilidad mutua. Es en este momento cuando el Zorro pronuncia una de las citas más famosas de la obra: "On ne voit bien qu'avec le cœur. L'essentiel est invisible pour les yeux" ("Solo se ve bien con el corazón. Lo esencial es invisible a los ojos"). Esta lección resalta la importancia de mirar más allá de las apariencias y valorar lo que realmente importa en la vida.</p>
+<p>Otro elemento central de la historia es el encuentro del Principito con un aviador varado en el desierto, que narra la historia desde su perspectiva. A medida que la relación entre el Principito y el aviador se desarrolla, se revelan los aspectos más profundos de la existencia y la búsqueda de significado en la vida. La narrativa ofrece momentos emotivos y reflexiones filosóficas que trascienden las categorías de literatura infantil.</p>
+<p>El tema recurrente de la obra es la importancia de la pureza de corazón y la capacidad de ver el mundo con una perspectiva desprovista de prejuicios y cinismo. A medida que el Principito viaja por diferentes planetas y entabla amistad con los personajes que encuentra, descubre que la verdadera riqueza se encuentra en las conexiones humanas y en la apreciación de las cosas simples y esenciales.</p>
+<p>El libro también aborda temas más profundos, como la naturaleza efímera de la vida, la pérdida de la inocencia y la búsqueda eterna del significado. La rosa, a la que el Principito cuida en su asteroide, simboliza el amor y la dedicación, pero también la complejidad de las relaciones y la inevitable separación.</p>
+<p>La historia alcanza su punto culminante con el sacrificio del Principito para salvar su vida, y esta narrativa conmueve a los lectores con una mezcla de tristeza y esperanza. La obra concluye con el Principito y el aviador comprendiendo la verdadera esencia de las cosas y la importancia de ver con el corazón.</p>
+<p>"El Principito" es apreciado no solo por su narrativa encantadora y su belleza poética, sino también por la profundidad de sus lecciones filosóficas. La obra sigue siendo relevante y conmovedora, tocando los corazones de generaciones de lectores en todo el mundo, y continúa siendo una obra clásica que invita a la reflexión sobre la naturaleza humana y el significado de la vida.</p>
+            </div>
+        </div>
+        <a href="">Libro completo en mi otra página web (Click aquí)</a></li>
+        <!-- Espacio para comentarios ... -->
+        <div id="comments">
+            <h3>Comentarios sobre el libro</h3>
+            <div>
+                <label for="author-input">Tu nombre:</label>
+                <input type="text" id="author-input" placeholder="Tu nombre...">
+                <span id="author-error" style="color: red;"></span>
+            </div>
+            <textarea id="comment-input" rows="4" placeholder="Agrega tu comentario aquí..." onkeypress="handleCommentKeyPress(event)"></textarea>
+            <span id="comment-error" style="color: red;"></span>
+            <button id="comment-button" onclick="publishComment()">Publicar</button>
+            <!-- Puedes agregar un botón de enviar comentario si lo deseas -->
+            <div id="published-comments"></div>
+        </div>
+
+        <!-- Mensaje si no se encuentra el libro -->
+        <div id="not-found-message"></div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2023 Renta de Resúmenes de Libros.</p>
+        <p>¿Tienes dudas, sugerencias o comentarios?</p>
+        <p>Escríbeme a resumidos.com123@gmail.com</p>
+    </footer>
+
+    <!-- Script para almacenar y mostrar comentarios ... -->
+    <script>
+        // Función para publicar un comentario
+        function publishComment() {
+            var authorInput = document.getElementById('author-input');
+            var commentInput = document.getElementById('comment-input');
+            var authorName = authorInput.value.trim();
+            var commentText = commentInput.value.trim();
+            var authorError = document.getElementById('author-error');
+            var commentError = document.getElementById('comment-error');
+
+            // Validar que se haya ingresado el nombre del autor y el comentario
+            if (!authorName && !commentText) {
+                authorError.textContent = 'No ingresaste nada';
+                commentError.textContent = 'No ingresaste nada';
+                return;
+            } else if (!authorName) {
+                authorError.textContent = 'No ingresaste el usuario';
+                return;
+            } else if (!commentText) {
+                commentError.textContent = 'No ingresaste el comentario';
+                return;
+            }
+
+            // Limpiar mensajes de error
+            authorError.textContent = '';
+            commentError.textContent = '';
+
+            // Obtener la sección de comentarios
+            var publishedComments = document.getElementById('published-comments');
+
+            // Crear un nuevo elemento para el comentario
+            var commentElement = document.createElement('div');
+            commentElement.className = 'comment';
+            var commentContent = document.createElement('span');
+            commentContent.innerHTML = '<strong>' + authorName + ':</strong> ' + commentText;
+            commentElement.appendChild(commentContent);
+
+            // Agregar el botón de eliminar al comentario
+            var deleteButton = document.createElement('button');
+            deleteButton.className = 'delete-button';
+            deleteButton.textContent = 'Eliminar';
+            deleteButton.onclick = function () {
+                publishedComments.removeChild(commentElement);
+                // Actualizar los comentarios almacenados después de eliminar uno
+                updateStoredComments();
+            };
+            commentElement.appendChild(deleteButton);
+
+            // Agregar el comentario a la sección de comentarios
+            publishedComments.appendChild(commentElement);
+
+            // Almacenar el comentario en localStorage
+            saveComment({ author: authorName, text: commentText });
+
+            // Limpiar los cuadros de entrada después de publicar el comentario
+            authorInput.value = '';
+            commentInput.value = '';
+        }
+
+        // Función para cargar los comentarios almacenados al cargar la página
+        function loadComments() {
+            var storedComments = getStoredComments();
+
+            if (storedComments) {
+                var publishedComments = document.getElementById('published-comments');
+
+                storedComments.forEach(function (comment) {
+                    var commentElement = createCommentElement(comment);
+                    publishedComments.appendChild(commentElement);
+                });
+            }
+        }
+
+        // Función para almacenar un comentario en localStorage
+        function saveComment(comment) {
+            var storedComments = getStoredComments() || [];
+            storedComments.push(comment);
+            localStorage.setItem('comments', JSON.stringify(storedComments));
+        }
+
+        // Función para obtener los comentarios almacenados en localStorage
+        function getStoredComments() {
+            var storedCommentsJSON = localStorage.getItem('comments');
+            return storedCommentsJSON ? JSON.parse(storedCommentsJSON) : null;
+        }
+
+        // Función para crear un elemento de comentario
+        function createCommentElement(comment) {
+            var commentElement = document.createElement('div');
+            commentElement.className = 'comment';
+            var commentContent = document.createElement('span');
+            commentContent.innerHTML = '<strong>' + comment.author + ':</strong> ' + comment.text;
+            commentElement.appendChild(commentContent);
+
+            // Agregar el botón de eliminar al comentario
+            var deleteButton = document.createElement('button');
+            deleteButton.className = 'delete-button';
+            deleteButton.textContent = 'Eliminar';
+            deleteButton.onclick = function () {
+                commentElement.parentNode.removeChild(commentElement);
+                // Actualizar los comentarios almacenados después de eliminar uno
+                updateStoredComments();
+            };
+            commentElement.appendChild(deleteButton);
+
+            return commentElement;
+        }
+
+        // Función para actualizar los comentarios almacenados después de eliminar uno
+        function updateStoredComments() {
+            var commentElements = document.getElementsByClassName('comment');
+            var updatedComments = [];
+
+            for (var i = 0; i < commentElements.length; i++) {
+                var commentContent = commentElements[i].getElementsByTagName('span')[0].innerHTML;
+                var splitIndex = commentContent.indexOf(':') + 2; // Considerando espacio después de ':'
+                var author = commentContent.substring(0, splitIndex - 2);
+                var text = commentContent.substring(splitIndex);
+                updatedComments.push({ author: author, text: text });
+            }
+
+            localStorage.setItem('comments', JSON.stringify(updatedComments));
+        }
+
+        // Función para manejar el evento de presionar Enter en el área de comentarios
+        function handleCommentKeyPress(event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                publishComment();
+            }
+        }
+
+        // Función para buscar y redirigir a la página correspondiente
+        function searchAndRedirect() {
+            var searchInput = document.getElementById('search-input');
+            var searchTerm = searchInput.value.trim().toLowerCase();
+
+            // Reemplazar espacios con guiones bajos para construir los nombres de archivo
+            var formattedSearchTerm = searchTerm.replace(/\s+/g, '') + '.html';
+
+            // Redirigir a la página correspondiente si existe
+            var notFoundMessage = document.getElementById('not-found-message');
+            notFoundMessage.innerHTML = ''; // Limpiar el mensaje
+
+            if (bookExists(formattedSearchTerm)) {
+                window.location.href = formattedSearchTerm;
+            } else {
+                notFoundMessage.innerHTML = 'No hay resúmenes de libros de acuerdo a tu solicitud.';
+            }
+        }
+
+        // Función para manejar el evento de presionar Enter en la barra de búsqueda
+        function handleSearchKeyPress(event) {
+            if (event.key === 'Enter') {
+                searchAndRedirect();
+            }
+        }
+
+        // Función para verificar si existe un libro
+        function bookExists(bookName) {
+            // Puedes implementar la lógica para verificar si existe el libro
+            // Devuelve true si el libro existe, false de lo contrario
+            return true; // Placeholder, reemplazar con lógica real
+        }
+
+        // Configurar el evento de presionar Enter en el área de comentarios
+        var commentInput = document.getElementById('comment-input');
+        commentInput.addEventListener('keypress', handleCommentKeyPress);
+
+        // Configurar el evento de presionar Enter en la barra de búsqueda
+        var searchInput = document.getElementById('search-input');
+        searchInput.addEventListener('keypress', handleSearchKeyPress);
+
+        // Cargar comentarios al cargar la página
+        window.onload = loadComments;
+    </script>
+
+</body>
+
+</html>
