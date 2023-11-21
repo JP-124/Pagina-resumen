@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de autores</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #a73737;
+            color: #fff;
+            text-align: left;
+            padding: 1em 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        #main-title {
+            color: #fff;
+        }
+
+        #search-bar {
+            background-color: #a73737;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        #search-input {
+            padding: 5px;
+            font-size: 16px;
+            width: 80%;
+            border: none;
+            background-color: #f2f2f2;
+            border-radius: 5px;
+        }
+
+        nav {
+            background-color: #888;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+            margin: 0 15px;
+            cursor: pointer;
+        }
+
+        #main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+
+        #alphabet-filter {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .letter {
+            margin: 0 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .authors-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .author-letter {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .author-list {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .author-item {
+            margin: 10px;
+            padding: 10px;
+            background-color: #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #books-list {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .book-item {
+            margin: 10px;
+            padding: 10px;
+            background-color: #eee;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <link rel="shortcut icon" href="logoresume.png">
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <h1 id="main-title">Lista de Autores (y sus libros)</h1>
+        <!-- Barra de búsqueda -->
+        <div id="search-bar">
+            <input type="text" id="search-input" placeholder="Buscar...">
+        </div>
+    </header>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="listadelibros.html">Lista de libros</a></li>
+            <li><a href="categorias.html">Categorías</a></li>
+            <li><a href="libroporautor.html">Lista de autores</a></li>
+            <li><a href="guiabuscador.html">Guía del buscador</a></li>
+        </ul>
+    </nav>
+
+    <section id="main-content">
+        <!-- Lista de autores -->
+
+        <a href="libroporautor.html">Volver a la lista de autores</a></li>
+        <p></p>
+        <h1>Lista de autores (organizados alfabéticamente)</h1>
+        <p></p>
+        <h1>(En esta página no funciona la barra de búsqueda)</h1>
+        <p>Aquí abajo puedes filtrar alfabéticamente todos los autores y elegir los de tu agrado😉</p>
+        <p>Si quieres ver todos los autores disponibles de nuevo, dale al botón de volver a la lista de autores</p>
+        <p>Si no hay ningún autor en cualquier letra es porque todavía no hay libros de este autor</p>
+        <!-- Filtro alfabético -->
+        <div id="alphabet-filter">
+            <span class="letter" onclick="filterByLetter('1')">1</span>
+            <span class="letter" onclick="filterByLetter('2')">2</span>
+            <span class="letter" onclick="filterByLetter('3')">3</span>
+            <span class="letter" onclick="filterByLetter('4')">4</span>
+            <span class="letter" onclick="filterByLetter('5')">5</span>
+            <span class="letter" onclick="filterByLetter('6')">6</span>
+            <span class="letter" onclick="filterByLetter('7')">7</span>
+            <span class="letter" onclick="filterByLetter('8')">8</span>
+            <span class="letter" onclick="filterByLetter('9')">9</span>
+            <span class="letter" onclick="filterByLetter('0')">0</span>
+            <span class="letter" onclick="filterByLetter('A')">A</span>
+            <span class="letter" onclick="filterByLetter('B')">B</span>
+            <span class="letter" onclick="filterByLetter('C')">C</span>
+            <span class="letter" onclick="filterByLetter('D')">D</span>
+            <span class="letter" onclick="filterByLetter('E')">E</span>
+            <span class="letter" onclick="filterByLetter('F')">F</span>
+            <span class="letter" onclick="filterByLetter('G')">G</span>
+            <span class="letter" onclick="filterByLetter('H')">H</span>
+            <span class="letter" onclick="filterByLetter('I')">I</span>
+            <span class="letter" onclick="filterByLetter('J')">J</span>
+            <span class="letter" onclick="filterByLetter('K')">K</span>
+            <span class="letter" onclick="filterByLetter('L')">L</span>
+            <span class="letter" onclick="filterByLetter('M')">M</span>
+            <span class="letter" onclick="filterByLetter('N')">N</span>
+            <span class="letter" onclick="filterByLetter('Ñ')">Ñ</span>
+            <span class="letter" onclick="filterByLetter('O')">O</span>
+            <span class="letter" onclick="filterByLetter('P')">P</span>
+            <span class="letter" onclick="filterByLetter('Q')">Q</span>
+            <span class="letter" onclick="filterByLetter('R')">R</span>
+            <span class="letter" onclick="filterByLetter('S')">S</span>
+            <span class="letter" onclick="filterByLetter('T')">T</span>
+            <span class="letter" onclick="filterByLetter('U')">U</span>
+            <span class="letter" onclick="filterByLetter('V')">V</span>
+            <span class="letter" onclick="filterByLetter('W')">W</span>
+            <span class="letter" onclick="filterByLetter('X')">X</span>
+            <span class="letter" onclick="filterByLetter('Y')">Y</span>
+            <span class="letter" onclick="filterByLetter('Z')">Z</span>
+        </div>
+
+        <!-- Lista de autores organizados por letra -->
+        <div class="authors-container">
+            <!-- A -->
+            <div class="author-letter">
+                <h2>A</h2>
+                <ul class="author-list">
+                    <li class="author-item" onclick="loadBooks(' ')"> </li>
+                </ul>
+            </div>
+            
+            <!-- B -->
+            <div class="author-letter">
+                <h2>B</h2>
+                <ul class="author-list">
+                    <li class="author-item" onclick="loadBooks(' ')"> </li>
+                </ul>
+            </div>
+
+            <!-- C -->
+            <div class="author-letter">
+                <h2>C</h2>
+                <ul class="author-list">
+                    <li class="author-item" onclick="loadBooks(' ')"> </li>
+                </ul>
+            </div>
+            <!-- D -->
+            <div class="author-letter">
+                <h2>D</h2>
+                <ul class="author-list">
+                    <li class="author-item" onclick="loadBooks('Dan Brown')"> </li>
+                </ul>
+            </div>
+            <!-- E -->
+            <div class="author-letter">
+                <h2>E</h2>
+                <ul class="author-list">
+                    <li class="author-item" onclick="loadBooks('Esopo')">Esopo</li>
+                </ul>
+            </div>
+            <!-- F -->
+            <div class="author-letter">
+                <h2>F</h2>
+                <ul class="author-list">
+                    <li class="author-item" onclick="loadBooks(' ')"> </li>
+                </ul>
+            </div>
+            <!-- G -->
+            <div class="author-letter">
+                <h2>G</h2>
+                <ul class="author-list">
+                    <li class="author-item" onclick="loadBooks('Gabriel García Márquez')">Gabriel García Márquez</li>
+                    <li class="author-item" onclick="loadBooks('George Orwell')">George Orwell</li>
+                </ul>
+            </div>
+            <!-- H -->
+            <div class="author-letter">
+                <h2>H</h2>
+                <ul class="author-list">
+                    <li class="author-item" onclick="loadBooks(' ')"> </li>
+                </ul>
+            </div>
+            <!-- I -->
+            <div class="author-letter">
+                <h2>I</h2>
+                <ul class="author-list">
+                    <li class="author-item" onclick="loadBooks(' ')"> </li>
+                </ul>
+            </div>
+            <!-- J -->
+            <div class="author-letter">
+                <h2>J</h2>
+                <ul class="author-list">
+                    <li class="author-item" onclick="loadBooks('Joseph Jacobs')">Joseph Jacobs</li>
+                    <li class="author-item" onclick="loadBooks('Jane Austen')">Jane Austen</li>
+                </ul>
+            </div>
+            <!-- K -->
+            <div class="author-letter">
+                <h2>K</h2>
+                <ul class="author-list">
+                    <li class="author-item" onclick="loadBooks(' ')"> </li>
+                </ul>
+            </div>
+            <!-- L -->
+            <div class="author-letter">
+                <h2>L</h2>
+                <ul class="author-list">
+                    <li class="author-item" onclick="loadBooks(' ')"> </li>
+                </ul>
+            </div>
+            <!-- M -->
+            <div class="author-letter">
+                <h2>M</h2>
+                <ul class="author-list">
+                    <li class="author-item" onclick="loadBooks('Matthew Lipman')">Matthew Lipman</li>
+                </ul>
+            </div>
+            <!-- N -->
+            <div class="author-letter">
+                <h2>N</h2>
+                <ul class="author-list">
+                    <li class="author-item" onclick="loadBooks(' ')"> </li>
+                </ul>
+            </div>
+            <!-- Ñ -->
+            <div class="author-letter">
+                <h2>Ñ</h2>
+                <ul class="author-list">
+                    <li class="author-item" onclick="loadBooks(' ')"> </li>
+                </ul>
+            </div>
+            <!-- O -->
+            <div class="author-letter">
+                <h2>O</h2>
+                <ul class="author-list">
+                    <li class="author-item" onclick="loadBooks(' ')"> </li>
+                </ul>
+            </div>
+            <!-- P -->
+            <div class="author-letter">
+                <h2>P</h2>
+                <ul class="author-list">
+                    <li class="author-item" onclick="loadBooks(' ')"> </li>
+                </ul>
+            </div>
+            <!-- Q -->
+            <div class="author-letter">
+                <h2>Q</h2>
+                <ul class="author-list">
+                    <li class="author-item" onclick="loadBooks(' ')"> </li>
+                </ul>
+            </div>
+            <!-- R -->
+            <div class="author-letter">
+                <h2>R</h2>
+                <ul class="author-list">
+                    <li class="author-item" onclick="loadBooks(' ')"> </li>
+                </ul>
+            </div>
+            <!-- S -->
+            <div class="author-letter">
+                <h2>S</h2>
+                <ul class="author-list">
+                    <li class="author-item" onclick="loadBooks('Stephen Hawking')">Stephen Hawking</li>
+                    <li class="author-item" onclick="loadBooks('Saint-Exupéry')">Saint-Exupéry</li>
+                </ul>
+            </div>
+            <!-- T -->
+            <div class="author-letter">
+                <h2>T</h2>
+                <ul class="author-list">
+                    <li class="author-item" onclick="loadBooks(' ')"> </li>
+                </ul>
+            </div>
+            <!-- U -->
+            <div class="author-letter">
+                <h2>U</h2>
+                <ul class="author-list">
+                    <li class="author-item" onclick="loadBooks(' ')"> </li>
+                </ul>
+            </div>
+            <!-- V -->
+            <div class="author-letter">
+                <h2>V</h2>
+                <ul class="author-list">
+                    <li class="author-item" onclick="loadBooks(' ')"> </li>
+                </ul>
+            </div>
+            <!-- W -->
+            <div class="author-letter">
+                <h2>W</h2>
+                <ul class="author-list">
+                    <li class="author-item" onclick="loadBooks(' ')"> </li>
+                </ul>
+            </div>
+            <!-- X -->
+            <div class="author-letter">
+                <h2>X</h2>
+                <ul class="author-list">
+                    <li class="author-item" onclick="loadBooks(' ')"> </li>
+                </ul>
+            </div>
+            <!-- Y -->
+            <div class="author-letter">
+                <h2>Y</h2>
+                <ul class="author-list">
+                    <li class="author-item" onclick="loadBooks(' ')"> </li>
+                </ul>
+            </div>
+            <!-- Z -->
+            <div class="author-letter">
+                <h2>Z</h2>
+                <ul class="author-list">
+                    <li class="author-item" onclick="loadBooks(' ')"> </li>
+                </ul>
+            </div>
+            <!-- Repite el patrón para otras letras según sea necesario -->
+        </div>
+
+        <!-- Lista de libros del autor seleccionado -->
+        <ul id="books-list"></ul>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2023 Renta de Resúmenes de Libros.</p>
+        <p>¿Tienes dudas, sugerencias o comentarios?</p>
+        <p>Escríbeme a resumidos.com123@gmail.com</p>
+    </footer>
+
+    <script>
+        function filterByLetter(letter) {
+            var authors = document.querySelectorAll('.author-letter');
+
+            authors.forEach(function (author) {
+                var currentLetter = author.querySelector('h2').textContent.toUpperCase();
+                if (currentLetter === letter) {
+                    author.style.display = 'block';
+                } else {
+                    author.style.display = 'none';
+                }
+            });
+        }
+
+        // Función para cargar libros de un autor
+        function loadBooks(authorName) {
+            // Ocultar todos los autores
+            var authors = document.querySelectorAll('.author-letter');
+            authors.forEach(function (author) {
+                author.style.display = 'none';
+            });
+
+            // Mostrar el autor seleccionado
+            var selectedAuthor = document.querySelector('.author-item[data-author="' + authorName + '"]');
+            if (selectedAuthor) {
+                selectedAuthor.style.display = 'block';
+            }
+
+            // Obtener la lista de libros del autor (puedes personalizar esto según tu necesidad)
+            const booksList = getBooksListByAuthor(authorName);
+
+            // Mostrar la lista de libros
+            const booksListElement = document.getElementById('books-list');
+            booksListElement.innerHTML = ''; // Limpiar la lista antes de agregar elementos
+
+            booksList.forEach(book => {
+                const bookItem = document.createElement('li');
+                bookItem.className = 'book-item';
+                bookItem.textContent = book;
+                bookItem.onclick = function () {
+                    // Redirigir a la página de resumen del libro
+                    window.location.href = book.toLowerCase().replace(/\s+/g, '') + '.html';
+                };
+                booksListElement.appendChild(bookItem);
+            });
+        }
+
+        // Función para obtener la lista de libros según el autor
+        function getBooksListByAuthor(authorName) {
+            // Puedes implementar lógica para obtener la lista de libros según el autor
+            // Aquí proporciono una lista de ejemplo para algunos autores
+            if (authorName === 'Esopo') {
+                return [
+                    'La liebre y la tortuga',
+                    'El león y el ratón',
+                ];
+            } else if (authorName === 'Gabriel García Márquez') {
+                return [
+                    'Cien años de soledad',
+                    'Crónica de una muerte anunciada',
+                ];
+            } else if (authorName === 'Joseph Jacobs') {
+                return [
+                    'Los 3 cerditos',
+                ];
+            } else if (authorName === 'George Orwell') {
+                return [
+                    '1984',
+                ];
+            } else if (authorName === 'Stephen Hawking') {
+                return [
+                    'Breve historia del tiempo',
+                ];
+            } else if (authorName === 'Dan Brown') {
+                return [
+                    'El código Da Vinci',
+                ];
+            } else if (authorName === 'Saint-Exupéry') {
+                return [
+                    'El principito',
+                ];
+            } else if (authorName === 'jane Austen') {
+                return [
+                    'Orgullo y prejuicio',
+                ];
+            } else {
+                // Devuelve una lista vacía o maneja otros casos según sea necesario
+                return [];
+            }
+        }
+    </script>
+</body>
+</html>

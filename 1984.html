@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen del Libro</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+   body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #a73737;
+            color: #fff;
+            text-align: left;
+            padding: 1em 1em;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        h1 {
+            margin: 0;
+            color: #ffffff;
+        }
+
+     
+        nav {
+            background-color: #888;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* Centra los elementos horizontalmente */
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff; /* Color blanco para los enlaces */
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        #main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #book-details {
+            margin-bottom: 20px;
+            display: flex; /* Nuevo estilo para usar flexbox */
+            align-items: center; /* Centrar verticalmente */
+        }
+
+        #book-image {
+            max-width: 100%;
+            height: auto;
+            margin-right: 20px; /* Espacio entre la imagen y el texto */
+        }
+
+        #back-to-list {
+            margin-top: 20px;
+        }
+
+        #search-bar {
+            text-align: right;
+            margin-right: 20px;
+        }
+
+        #search-input {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        #search-button {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: 20px;
+        }
+
+        #comments {
+            margin-top: 20px;
+        }
+
+        .comment {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .comment span {
+            margin-right: 5px;
+        }
+
+        .comment strong {
+            font-weight: bold;
+        }
+
+        .delete-button {
+            background-color: #ff5c5c;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+    <link rel="shortcut icon" href="logoresume.png">
+</head>
+
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <h1>Resumen del libro</h1>
+        <!-- Barra de búsqueda -->
+        <div id="search-bar">
+            <input type="text" id="search-input" placeholder="Buscar..." onkeypress="handleSearchKeyPress(event)">
+            <button id="search-button" onclick="searchAndRedirect()">Buscar</button>
+        </div>
+    </header>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="listadelibros.html">Lista de libros</a></li>
+            <li><a href="categorias.html">Categorías</a></li>
+            <li><a href="libroporautor.html">Lista de autores</a></li>
+            <li><a href="guiabuscador.html">Guía del buscador</a></li>
+        </ul>
+    </nav>
+
+    <section id="main-content">
+        <!-- Enlace para volver a la lista de libros -->
+        <p id="back-to-list"><a href="listadelibros.html">Volver a la lista de libros</a></p>
+        <p id="back-to-list"><a href="libroporautor.html">Volver a la lista de autores</a></p>
+        <p id="back-to-list"><a href="categorias.html">Volver a categorías</a></p>
+        <!-- Detalles del libro -->
+        <div id="book-details">
+            <div>
+                <h2>1984</h2>
+                <p>"1984" es una novela distópica escrita por George Orwell y publicada en 1949. La obra se desarrolla en un mundo ficticio totalitario conocido como Oceanía, en un futuro distante, y sigue la vida de Winston Smith, un ciudadano del régimen gobernado por el Partido y su líder, conocido como Gran Hermano. La novela explora temas como la vigilancia extrema, la manipulación de la verdad, la represión y la resistencia individual.</p>
+                <p>La sociedad de "1984" está gobernada por el Partido, que controla todos los aspectos de la vida de las personas. La tecnología, en forma de telescreens y otras herramientas de vigilancia, se utiliza para monitorear y controlar a la población. El Partido también manipula activamente la verdad a través del Ministerio de la Verdad, que se encarga de reescribir la historia para que se ajuste a la narrativa oficial. El lenguaje también es objeto de manipulación, con la creación de la "Neolengua" para eliminar palabras que podrían ser utilizadas para expresar ideas subversivas.</p>
+                <p>Winston Smith trabaja en el Ministerio de la Verdad y se siente atrapado en un mundo sin privacidad ni libertad. A través de su diario, expresa sus pensamientos y sentimientos prohibidos, lo que lo coloca en un peligro constante. Winston comienza a cuestionar el poder del Partido y se embarca en un viaje de autoexploración y resistencia contra la opresión.</p>
+                <p>La novela toma un giro aún más oscuro cuando Winston se enamora de Julia, una colega en el Ministerio de la Verdad. Juntos inician un romance secreto y desafían las restricciones impuestas por el Partido. Sin embargo, su rebelión es descubierta, y son arrestados por la Policía del Pensamiento.</p>
+                <p>Winston y Julia son llevados ante O'Brien, un miembro alto del Partido que inicialmente parece ser un aliado secreto de la resistencia. Pero O'Brien los traiciona y los somete a torturas psicológicas y físicas en la Sala 101, una cámara de tortura donde cada persona enfrenta sus peores miedos. Winston finalmente se quiebra y traiciona a Julia, renunciando a su amor por ella.</p>
+                <p>La novela culmina en una representación desgarradora de la rendición total de Winston al Partido. Después de ser liberado, Winston está completamente transformado. Ha perdido su capacidad de resistencia y rebelión, y ha aceptado la realidad manipulada por el Partido. La novela termina con Winston, ahora un hombre que ama al Gran Hermano, reflexionando sobre su sumisión total al régimen opresivo.</p>
+                <p>"1984" es una obra maestra de la literatura distópica que ha dejado una marca duradera en la cultura popular. George Orwell crea un retrato desolador de un mundo donde la verdad es relativa, la privacidad es inexistente y la libertad individual es sacrificada en aras del poder del Estado. La novela advierte sobre los peligros del totalitarismo y la manipulación de la realidad, temas que siguen siendo relevantes y provocadores en la sociedad contemporánea.</p>
+            </div>
+        </div>
+        <a href="">Libro completo en mi otra página web (Click aquí)</a></li>
+        <!-- Espacio para comentarios ... -->
+        <div id="comments">
+            <h3>Comentarios sobre el libro</h3>
+            <div>
+                <label for="author-input">Tu nombre:</label>
+                <input type="text" id="author-input" placeholder="Tu nombre...">
+                <span id="author-error" style="color: red;"></span>
+            </div>
+            <textarea id="comment-input" rows="4" placeholder="Agrega tu comentario aquí..." onkeypress="handleCommentKeyPress(event)"></textarea>
+            <span id="comment-error" style="color: red;"></span>
+            <button id="comment-button" onclick="publishComment()">Publicar</button>
+            <!-- Puedes agregar un botón de enviar comentario si lo deseas -->
+            <div id="published-comments"></div>
+        </div>
+
+        <!-- Mensaje si no se encuentra el libro -->
+        <div id="not-found-message"></div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2023 Renta de Resúmenes de Libros.</p>
+        <p>¿Tienes dudas, sugerencias o comentarios?</p>
+        <p>Escríbeme a resumidos.com123@gmail.com</p>
+    </footer>
+
+    <!-- Script para almacenar y mostrar comentarios ... -->
+    <script>
+        // Función para publicar un comentario
+        function publishComment() {
+            var authorInput = document.getElementById('author-input');
+            var commentInput = document.getElementById('comment-input');
+            var authorName = authorInput.value.trim();
+            var commentText = commentInput.value.trim();
+            var authorError = document.getElementById('author-error');
+            var commentError = document.getElementById('comment-error');
+
+            // Validar que se haya ingresado el nombre del autor y el comentario
+            if (!authorName && !commentText) {
+                authorError.textContent = 'No ingresaste nada';
+                commentError.textContent = 'No ingresaste nada';
+                return;
+            } else if (!authorName) {
+                authorError.textContent = 'No ingresaste el usuario';
+                return;
+            } else if (!commentText) {
+                commentError.textContent = 'No ingresaste el comentario';
+                return;
+            }
+
+            // Limpiar mensajes de error
+            authorError.textContent = '';
+            commentError.textContent = '';
+
+            // Obtener la sección de comentarios
+            var publishedComments = document.getElementById('published-comments');
+
+            // Crear un nuevo elemento para el comentario
+            var commentElement = document.createElement('div');
+            commentElement.className = 'comment';
+            var commentContent = document.createElement('span');
+            commentContent.innerHTML = '<strong>' + authorName + ':</strong> ' + commentText;
+            commentElement.appendChild(commentContent);
+
+            // Agregar el botón de eliminar al comentario
+            var deleteButton = document.createElement('button');
+            deleteButton.className = 'delete-button';
+            deleteButton.textContent = 'Eliminar';
+            deleteButton.onclick = function () {
+                publishedComments.removeChild(commentElement);
+                // Actualizar los comentarios almacenados después de eliminar uno
+                updateStoredComments();
+            };
+            commentElement.appendChild(deleteButton);
+
+            // Agregar el comentario a la sección de comentarios
+            publishedComments.appendChild(commentElement);
+
+            // Almacenar el comentario en localStorage
+            saveComment({ author: authorName, text: commentText });
+
+            // Limpiar los cuadros de entrada después de publicar el comentario
+            authorInput.value = '';
+            commentInput.value = '';
+        }
+
+        // Función para cargar los comentarios almacenados al cargar la página
+        function loadComments() {
+            var storedComments = getStoredComments();
+
+            if (storedComments) {
+                var publishedComments = document.getElementById('published-comments');
+
+                storedComments.forEach(function (comment) {
+                    var commentElement = createCommentElement(comment);
+                    publishedComments.appendChild(commentElement);
+                });
+            }
+        }
+
+        // Función para almacenar un comentario en localStorage
+        function saveComment(comment) {
+            var storedComments = getStoredComments() || [];
+            storedComments.push(comment);
+            localStorage.setItem('comments', JSON.stringify(storedComments));
+        }
+
+        // Función para obtener los comentarios almacenados en localStorage
+        function getStoredComments() {
+            var storedCommentsJSON = localStorage.getItem('comments');
+            return storedCommentsJSON ? JSON.parse(storedCommentsJSON) : null;
+        }
+
+        // Función para crear un elemento de comentario
+        function createCommentElement(comment) {
+            var commentElement = document.createElement('div');
+            commentElement.className = 'comment';
+            var commentContent = document.createElement('span');
+            commentContent.innerHTML = '<strong>' + comment.author + ':</strong> ' + comment.text;
+            commentElement.appendChild(commentContent);
+
+            // Agregar el botón de eliminar al comentario
+            var deleteButton = document.createElement('button');
+            deleteButton.className = 'delete-button';
+            deleteButton.textContent = 'Eliminar';
+            deleteButton.onclick = function () {
+                commentElement.parentNode.removeChild(commentElement);
+                // Actualizar los comentarios almacenados después de eliminar uno
+                updateStoredComments();
+            };
+            commentElement.appendChild(deleteButton);
+
+            return commentElement;
+        }
+
+        // Función para actualizar los comentarios almacenados después de eliminar uno
+        function updateStoredComments() {
+            var commentElements = document.getElementsByClassName('comment');
+            var updatedComments = [];
+
+            for (var i = 0; i < commentElements.length; i++) {
+                var commentContent = commentElements[i].getElementsByTagName('span')[0].innerHTML;
+                var splitIndex = commentContent.indexOf(':') + 2; // Considerando espacio después de ':'
+                var author = commentContent.substring(0, splitIndex - 2);
+                var text = commentContent.substring(splitIndex);
+                updatedComments.push({ author: author, text: text });
+            }
+
+            localStorage.setItem('comments', JSON.stringify(updatedComments));
+        }
+
+        // Función para manejar el evento de presionar Enter en el área de comentarios
+        function handleCommentKeyPress(event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                publishComment();
+            }
+        }
+
+        // Función para buscar y redirigir a la página correspondiente
+        function searchAndRedirect() {
+            var searchInput = document.getElementById('search-input');
+            var searchTerm = searchInput.value.trim().toLowerCase();
+
+            // Reemplazar espacios con guiones bajos para construir los nombres de archivo
+            var formattedSearchTerm = searchTerm.replace(/\s+/g, '') + '.html';
+
+            // Redirigir a la página correspondiente si existe
+            var notFoundMessage = document.getElementById('not-found-message');
+            notFoundMessage.innerHTML = ''; // Limpiar el mensaje
+
+            if (bookExists(formattedSearchTerm)) {
+                window.location.href = formattedSearchTerm;
+            } else {
+                notFoundMessage.innerHTML = 'No hay resúmenes de libros de acuerdo a tu solicitud.';
+            }
+        }
+
+        // Función para manejar el evento de presionar Enter en la barra de búsqueda
+        function handleSearchKeyPress(event) {
+            if (event.key === 'Enter') {
+                searchAndRedirect();
+            }
+        }
+
+        // Función para verificar si existe un libro
+        function bookExists(bookName) {
+            // Puedes implementar la lógica para verificar si existe el libro
+            // Devuelve true si el libro existe, false de lo contrario
+            return true; // Placeholder, reemplazar con lógica real
+        }
+
+        // Configurar el evento de presionar Enter en el área de comentarios
+        var commentInput = document.getElementById('comment-input');
+        commentInput.addEventListener('keypress', handleCommentKeyPress);
+
+        // Configurar el evento de presionar Enter en la barra de búsqueda
+        var searchInput = document.getElementById('search-input');
+        searchInput.addEventListener('keypress', handleSearchKeyPress);
+
+        // Cargar comentarios al cargar la página
+        window.onload = loadComments;
+    </script>
+
+</body>
+
+</html>

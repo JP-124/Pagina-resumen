@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía del buscador</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #a73737;
+            color: #fff;
+            text-align: left;
+            padding: 1em 1em;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        h1 {
+            margin: 0;
+            color: #ffffff;
+        }
+
+        nav {
+            background-color: #888;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        #main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #search-bar {
+            text-align: right;
+            margin-right: 20px;
+        }
+
+        #search-input {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        #search-button {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: 20px;
+        }
+
+        /* Tus estilos adicionales */
+        #not-found-message {
+            color: #ff0000;
+            margin-top: 10px;
+        }
+    </style>
+<link rel="shortcut icon" href="logoresume.png">
+</head>
+
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <h1>Guía del buscador</h1>
+        <!-- Barra de búsqueda -->
+        <div id="search-bar">
+            <input type="text" id="search-input" placeholder="Buscar..." onkeypress="handleSearchKeyPress(event)">
+            <button id="search-button" onclick="searchAndRedirect()">Buscar</button>
+        </div>
+    </header>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="listadelibros.html">Lista de libros</a></li>
+            <li><a href="categorias.html">Categorías</a></li>
+            <li><a href="libroporautor.html">Lista de autores</a></li>
+            <li><a href="guiabuscador.html">Guía del buscador</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <section id="main-content">
+        <h2>Bienvenido a la Guía del Buscador</h2>
+        <p>A continuación está cada libro, y esa es la forma en la que lo tienes que escribir en la barra de búsqueda para que te salga el resumen que esperas.</p>
+        <p>(Utilizarás este sistema porque cuando cree esta pagina tenía un bajo presupuesto 😞😂).</p>
+        
+        <h2>Lista de libros (ordenados alfabeticamente)</h2>
+        <p>1984</p>
+        <p>Breve historia del tiempo</p>
+        <p>Cien años de soledad</p>
+        <p>Crónica de una muerte anunciada</p>
+        <p>El león y el ratón</p>
+        <p>El código Da Vinci</p>
+        <p>El principito</p>
+        <p>La liebre y la tortuga</p>
+        <p>Lisa, de Matthew Lipman</p>
+        <p>Los 3 cerditos</p>
+        <p>Orgullo y prejuicio</p>
+        <p>Suki, de Matthew Lipman</p>
+    </section>
+
+    <!-- Mensaje de no encontrado -->
+    <div id="not-found-message"></div>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2023 Renta de Resúmenes de Libros.</p>
+        <p>¿Tienes dudas, sugerencias o comentarios?</p>
+        <p>Escríbeme a resumidos.com123@gmail.com</p>
+    </footer>
+
+    <!-- Script para buscar y redirigir ... -->
+    <script>
+        // Función para buscar y redirigir a la página correspondiente
+        function searchAndRedirect() {
+            var searchInput = document.getElementById('search-input');
+            var searchTerm = searchInput.value.trim().toLowerCase();
+
+            // Reemplazar espacios con guiones bajos para construir los nombres de archivo
+            var formattedSearchTerm = searchTerm.replace(/\s+/g, '') + '.html';
+
+            // Redirigir a la página correspondiente si existe
+            var notFoundMessage = document.getElementById('not-found-message');
+            notFoundMessage.innerHTML = ''; // Limpiar el mensaje
+
+            if (bookExists(formattedSearchTerm)) {
+                window.location.href = formattedSearchTerm;
+            } else {
+                notFoundMessage.innerHTML = 'No hay resúmenes de libros de acuerdo a tu solicitud.';
+            }
+        }
+
+        // Función para manejar el evento de presionar Enter en la barra de búsqueda
+        function handleSearchKeyPress(event) {
+            if (event.key === 'Enter') {
+                searchAndRedirect();
+            }
+        }
+
+        // Función para verificar si existe un libro (ejemplo simple)
+        function bookExists(bookName) {
+            // En este ejemplo simple, se asume que los libros están en archivos HTML separados en el mismo directorio
+            // Devuelve true si el archivo del libro existe, false de lo contrario
+            // Aquí deberías implementar la lógica real para verificar la existencia del libro
+            return true; // Placeholder, reemplazar con lógica real
+        }
+    </script>
+
+</body>
+
+</html>

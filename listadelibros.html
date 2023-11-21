@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Libros</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #a73737;
+            color: #fff;
+            text-align: left;
+            padding: 1em 1em;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        h1 {
+            margin: 0;
+            color: #ffffff;
+        }
+
+        #search-bar {
+            text-align: right;
+            margin-right: 20px;
+        }
+
+        #search-input {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        #search-button {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        nav {
+            background-color: #888;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+            margin: 0 15px;
+        }
+
+        #main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+
+        #alphabet-filter {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .letter {
+            display: inline-block;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        #book-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .book-item {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        .book-item p {
+            margin: 0;
+        }
+
+        .book-link {
+            text-decoration: none;
+            color: #0000ff;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+    </style>
+    <link rel="shortcut icon" href="logoresume.png">
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <h1>Lista de Resúmenes</h1>
+
+        <!-- Barra de búsqueda -->
+        <div id="search-bar">
+            <input type="text" id="search-input" placeholder="Buscar..." onkeyup="searchOnEnter(event)">
+            <button id="search-button" onclick="searchAndRedirect()">Buscar</button>
+        </div>
+    </header>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="listadelibros.html">Lista de Libros</a>
+        <a href="categorias.html">Categorías</a>
+        <a href="libroporautor.html">Lista de autores</a>
+        <a href="guiabuscador.html">Guía del buscador</a>
+    </nav>
+
+    <!-- Contenido principal -->
+    <section id="main-content">
+        <a href="listadelibros.html">Volver a la lista de libros</a>
+        <h2>Lista de libros (ordenados alfabéticamente)</h2>
+
+        <p>Aquí abajo puedes filtrar alfabéticamente todos los libros y elegir el de tu agrado😉</p>
+        <p>Si quieres ver todos los libros disponibles de nuevo, dale click al botón "Volver a la lista de libros"</p>
+        <!-- Filtro alfabético -->
+        <div id="alphabet-filter">
+            <span class="letter" onclick="filterByLetter('1')">1</span>
+            <span class="letter" onclick="filterByLetter('2')">2</span>
+            <span class="letter" onclick="filterByLetter('3')">3</span>
+            <span class="letter" onclick="filterByLetter('4')">4</span>
+            <span class="letter" onclick="filterByLetter('5')">5</span>
+            <span class="letter" onclick="filterByLetter('6')">6</span>
+            <span class="letter" onclick="filterByLetter('7')">7</span>
+            <span class="letter" onclick="filterByLetter('8')">8</span>
+            <span class="letter" onclick="filterByLetter('9')">9</span>
+            <span class="letter" onclick="filterByLetter('0')">0</span>
+            <span class="letter" onclick="filterByLetter('A')">A</span>
+            <span class="letter" onclick="filterByLetter('B')">B</span>
+            <span class="letter" onclick="filterByLetter('C')">C</span>
+            <span class="letter" onclick="filterByLetter('D')">D</span>
+            <span class="letter" onclick="filterByLetter('E')">E</span>
+            <span class="letter" onclick="filterByLetter('F')">F</span>
+            <span class="letter" onclick="filterByLetter('G')">G</span>
+            <span class="letter" onclick="filterByLetter('H')">H</span>
+            <span class="letter" onclick="filterByLetter('I')">I</span>
+            <span class="letter" onclick="filterByLetter('J')">J</span>
+            <span class="letter" onclick="filterByLetter('K')">K</span>
+            <span class="letter" onclick="filterByLetter('L')">L</span>
+            <span class="letter" onclick="filterByLetter('M')">M</span>
+            <span class="letter" onclick="filterByLetter('N')">N</span>
+            <span class="letter" onclick="filterByLetter('Ñ')">Ñ</span>
+            <span class="letter" onclick="filterByLetter('O')">O</span>
+            <span class="letter" onclick="filterByLetter('P')">P</span>
+            <span class="letter" onclick="filterByLetter('Q')">Q</span>
+            <span class="letter" onclick="filterByLetter('R')">R</span>
+            <span class="letter" onclick="filterByLetter('S')">S</span>
+            <span class="letter" onclick="filterByLetter('T')">T</span>
+            <span class="letter" onclick="filterByLetter('U')">U</span>
+            <span class="letter" onclick="filterByLetter('V')">V</span>
+            <span class="letter" onclick="filterByLetter('W')">W</span>
+            <span class="letter" onclick="filterByLetter('X')">X</span>
+            <span class="letter" onclick="filterByLetter('Y')">Y</span>
+            <span class="letter" onclick="filterByLetter('Z')">Z</span>
+            <!-- Agrega más letras según sea necesario -->
+        </div>
+
+        <!-- Lista de libros -->
+        <ul id="book-list" class="book-list">
+            <!-- Cada libro se representa como un elemento de lista -->
+            <li class="book-item">
+                <a href="1984.html" class="book-link">
+                    <p>1984 de George Orwell</p>
+                </a>
+            </li>
+            
+            <li class="book-item">
+                <a href="brevehistoriadeltiempo.html" class="book-link">
+                    <p>Breve historia del tiempo de Stephen Hawking</p>
+                </a>
+            </li>
+            
+            <li class="book-item">
+                <a href="cienañosdesoledad.html" class="book-link">
+                    <p>Cien años de soledad de Gabriel García Márquez</p>
+                </a>
+            </li>
+            
+            <li class="book-item">
+                <a href="crónicadeunamuerteanunciada.html" class="book-link">
+                    <p>Crónica de una muerte anunciada de Gabriel García Márquez</p>
+                </a>
+            </li>
+            
+            <li class="book-item">
+                <a href="elleónyelratón.html" class="book-link">
+                    <p>El león y el ratón de Esopo</p>
+                </a>
+            </li>
+
+            <li class="book-item">
+                <a href="elcódigodavinci.html" class="book-link">
+                    <p>El código Da Vinci de Dan Brown</p>
+                </a>
+            </li>
+
+            <li class="book-item">
+                <a href="elprincipito.html" class="book-link">
+                    <p>El principito de Saint-Exupéry</p>
+                </a>
+            </li>
+
+            <li class="book-item">
+                <a href="laliebreylatortuga.html" class="book-link">
+                    <p>La liebre y la tortuga de Esopo</p>
+                </a>
+            </li>
+
+            <li class="book-item">
+                <a href="lisa,dematthewlipman.html" class="book-link">
+                    <p>Lisa, de Matthew Lipman</p>
+                </a>
+            </li>
+
+            <li class="book-item">
+                <a href="los3cerditos.html" class="book-link">
+                    <p>Los 3 cerditos de Joseph Jacobs</p>
+                </a>
+            </li>
+
+           <li class="book-item">
+                <a href="orgulloyprejuicio.html" class="book-link">
+                    <p>Orgullo y prejuicio de Jane Austen</p>
+                </a>
+            </li>
+
+            <li class="book-item">
+                <a href="suki,dematthewlipman.html" class="book-link">
+                    <p>Suki, de Matthew Lipman</p>
+                </a>
+            </li>
+
+        </ul>
+
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2023 Renta de Resúmenes de Libros.</p>
+        <p>¿Tienes dudas, sugerencias o comentarios?</p>
+        <p>Escríbeme a resumidos.com123@gmail.com</p>
+    </footer>
+
+    <!-- Script para filtrar libros por letra -->
+    <script>
+        function filterByLetter(letter) {
+            var books = document.querySelectorAll('.book-item');
+
+            books.forEach(function(book) {
+                var title = book.querySelector('p').textContent.toUpperCase();
+                if (title.startsWith(letter)) {
+                    book.style.display = 'block';
+                } else {
+                    book.style.display = 'none';
+                }
+            });
+        }
+
+        function searchAndRedirect() {
+            var searchTerm = document.getElementById('search-input').value;
+            var formattedSearchTerm = searchTerm.toLowerCase().replace(/\s/g, '');
+
+            // Redirigir a la página correspondiente si existe
+            if (bookExists(formattedSearchTerm)) {
+                window.location.href = formattedSearchTerm + '.html';
+            } else {
+                alert('No hay resúmenes de libros de acuerdo a tu solicitud.');
+            }
+        }
+
+        function searchOnEnter(event) {
+            if (event.key === 'Enter') {
+                searchAndRedirect();
+            }
+        }
+
+        function bookExists(bookName) {
+            // Implementa la lógica para verificar si existe el libro
+            // Devuelve true si el libro existe, false de lo contrario
+            return true; // Placeholder, reemplazar con lógica real
+        }
+    </script>
+
+</body>
+</html>
